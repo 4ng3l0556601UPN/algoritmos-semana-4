@@ -12,7 +12,7 @@ num2 = int(input("Ingrese el segundo número: "))
 #almacena el resultado retornado
 resultado = sumar(num1, num2)
 
-# muestra el resultado
+#muestra el resultado
 print("La suma es:", resultado)
 
-# num1 y num2 dentro de la función son variables locales
+#num1 y num2 dentro de la función son variables locales
