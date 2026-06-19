@@ -1,28 +1,39 @@
 #10 una función void que muestre todos los números primos desde 2 hasta N usando bucles anidados.
-#
-# Definir una función para calcular el factorial
-def calcular_factorial(n):
+# Función que muestra los números primos desde 2 hasta N
+def mostrar_primos(N):
 
-    # Validar que el número no sea negativo
-    if n < 0:
-        return "Error: El número debe ser no negativo."
+    # Mostrar un mensaje inicial
+    print("Números primos desde 2 hasta", N, ":")
 
-    # Inicializar el resultado en 1
-    factorial = 1
+    # Recorrer los números desde 2 hasta N
+    for numero in range(2, N + 1):
 
-    # Inicializar un contador
-    contador = 1
+        # Variable para determinar si el número es primo
+        es_primo = True
 
-    # Utilizar un bucle while para multiplicar los números
-    while contador <= n:
-        factorial = factorial * contador
-        contador += 1
+        # Buscar divisores desde 2 hasta numero - 1
+        for divisor in range(2, numero):
 
-    # Devolver el resultado
-    return factorial
+            # Verificar si el número es divisible exactamente
+            if numero % divisor == 0:
 
-# Solicitar al usuario que ingrese un número
-numero = int(input("Ingrese un número entero no negativo: "))
+                # Si tiene un divisor, no es primo
+                es_primo = False
 
-# Mostrar el factorial del número ingresado
-print("El factorial es:", calcular_factorial(numero))
+                # Salir del bucle interno
+                break
+
+        # Si sigue siendo primo, mostrarlo
+        if es_primo:
+            print(numero)
+
+
+# Solicitar al usuario un número entero positivo
+N = int(input("Ingrese el valor de N: "))
+
+# Validar que N sea mayor o igual a 2
+if N < 2:
+    print("Debe ingresar un número mayor o igual a 2.")
+else:
+    # Llamar a la función para mostrar los números primos
+    mostrar_primos(N)
