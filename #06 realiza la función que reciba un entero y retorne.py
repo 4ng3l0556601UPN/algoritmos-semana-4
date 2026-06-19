@@ -10,6 +10,6 @@ def es_par(numero):
 numero = int(input("Ingrese un número entero: "))
 # se usa la condicional if.
 if es_par(numero):
-    print(True)
+    print(f"El numero es par")# 
 else:
-    print(False) # se imprime False si el número es impar
+    print(f"El numero es impar") # se imprime False si el número es impar
